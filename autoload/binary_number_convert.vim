@@ -56,6 +56,8 @@ function! binary_number_convert#BtoN(mode = 0, out = 'd') abort
     let s = printf('%' . a:out, str2nr(n, 2))
     let nlen = strlen(n)
     let slen = strlen(s)
+
+    " 16進数0埋め
     if a:out == 'x' && slen % 2
       let s = '0' . s
       let slen += 1
